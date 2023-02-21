@@ -1,0 +1,12 @@
+.container {
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.container_main {
+    max-width: 90%;
+}
+
+.push-top {
+    margin-top: 50px;
+}
