@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\{Student,Country,State,City};
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -13,13 +14,14 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {   
+        // $student = Student::where("students.is_deleted", 0)
         $student = Student::where("students.is_deleted", 0)
             ->leftJoin('countries','countries.id','=','students.country')
             ->leftJoin('states','states.id','=','students.state')
             ->leftJoin('cities','cities.id','=','students.city')
             ->select('students.*','countries.name as countryName','states.name as stateName','cities.name as cityName')
-            ->get();
+            ->paginate(12);
         return view('Student.index', compact('student'));
     }
 
@@ -89,7 +91,6 @@ class StudentController extends Controller
         $data->city = $request->city_id;
         $data->email = $request->email;
         $data->phone = $request->phone;
-        $data->password = Hash::make($request->password);
         if($data->save()){
             return redirect()->route('students.index')->with('completed', 'Employee has been saved!');
         }else{

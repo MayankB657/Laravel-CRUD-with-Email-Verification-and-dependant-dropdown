@@ -16,9 +16,11 @@
                         State</a>
                     <a href="{{ route('city.create') }}" class="btn btn-info btn-sm mb-2 ml-2 float-right">Add
                         City</a>
+                    {{-- @dd($student->links()); --}}
                     <table class="table">
                         <thead>
                             <tr class="table-warning">
+                                <td>SrNo.</td>
                                 <td>ID</td>
                                 <td>Name</td>
                                 <td>Country</td>
@@ -32,6 +34,7 @@
                         <tbody>
                             @foreach ($student as $value)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $value->id }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->countryName }}</td>
@@ -54,6 +57,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div>
+                        {{-- @dd($student->links()); --}}
+                        {{ $student->links() }}
+                    </div>
                 </div>
             </div>
         </div>

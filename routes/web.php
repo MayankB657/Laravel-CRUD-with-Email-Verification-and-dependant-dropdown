@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{StudentController,CountryController,StateController,CityController,Controller};
+use App\Http\Controllers\{StudentController,CountryController,StateController,CityController,Controller,MailController};
 
 
 Route::get('/', function () {
@@ -30,3 +30,7 @@ Route::post('ajax/fetch-cities', [StudentController::class, 'fetchCity']);
 Route::resource('country', CountryController::class);
 Route::resource('state', StateController::class);
 Route::resource('city', CityController::class);
+
+Route::get('/sendattachmentemail', [MailController::class,'attachment_email']);
+Route::get('/sendhtmlemail', [MailController::class,'html_email']);
+Route::get('/sendbasicemail', [MailController::class,'basic_email']);

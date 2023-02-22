@@ -53,7 +53,10 @@
                                     <input type="tel" class="form-control" name="phone"
                                         value="{{ $student->phone }}" id="phone" required/>
                                 </div>
-                                <button type="submit" class="btn btn-sm btn-outline-success">Update User</button>
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-success">Update User</button>
+                                    <a href="" class="btn btn-sm btn-outline-danger ml-3">Reset Password</a>
+                                </div>
                             </form>
                         </div>
                     </div>

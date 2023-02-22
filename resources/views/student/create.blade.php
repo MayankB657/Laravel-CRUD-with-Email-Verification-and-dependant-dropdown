@@ -16,7 +16,7 @@
                                 <div class="form-group mb-3">
 
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" required/>
+                                    <input type="text" class="form-control" name="name" required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="country">Country</label>
@@ -39,17 +39,19 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" required/>
+                                    <input type="email" class="form-control" name="email" required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="phone">Phone</label>
-                                    <input type="tel" class="form-control" name="phone" id="phone" required/>
+                                    <input type="tel" class="form-control" name="phone" id="phone" required />
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="password">Password</label>
-                                    <input type="text" class="form-control" name="password" required/>
+                                    <input type="text" class="form-control" name="password" required />
                                 </div>
-                                <button type="submit" class="btn btn-sm btn-outline-success">Create User</button>
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-success">Create User</button>
+                                </div>
                             </form>
                         </div>
                     </div>

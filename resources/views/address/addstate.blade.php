@@ -26,7 +26,9 @@
                                     <label for="name"> Enter State Name</label>
                                     <input type="text" class="form-control" name="statename" />
                                 </div>
-                                <button type="submit" class="btn btn-sm btn-outline-success">Add State</button>
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-success">Add State</button>
+                                </div>
                             </form>
                         </div>
                     </div>

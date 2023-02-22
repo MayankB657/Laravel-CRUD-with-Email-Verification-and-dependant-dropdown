@@ -16,14 +16,14 @@
     <script src="{{ url('/') }}/public/build/assets/app-9a25e63b.js"></script>
 
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a href="#">
+                <img src="{{ url('/') }}/public/custom-image/logo2.png" style="height: 80px; width: 80px;">
             </a>
         </div>
 

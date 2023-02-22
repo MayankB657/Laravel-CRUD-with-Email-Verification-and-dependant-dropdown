@@ -10,7 +10,7 @@
             <div class="bg-light overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="text-gray-900">
                     <div class="card push-top container">
-                        <div class="card-body">            
+                        <div class="card-body">
                             <form method="post" action="{{ route('city.store') }}">
                                 @csrf
                                 <div class="form-group mb-3">
@@ -31,7 +31,9 @@
                                     <label for="name">Enter City Name</label>
                                     <input type="text" class="form-control" name="cityname" />
                                 </div>
-                                <button type="submit" class="btn btn-sm btn-outline-success">Add City</button>
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-success">Add City</button>
+                                </div>
                             </form>
                         </div>
                     </div>
