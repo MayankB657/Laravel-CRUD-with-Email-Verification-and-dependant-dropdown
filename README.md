@@ -1,6 +1,10 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+## About Project
 
+- This is my first laravel project. I have use Laravel version 10 for this project.
+- I have added dependent dropdown for country, state and city.
+- Download and migrate the database and edit the .env file for sending mails, add your mail and password.
 
 ## About Laravel
 
