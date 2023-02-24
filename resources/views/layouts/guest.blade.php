@@ -16,7 +16,7 @@
     <script src="{{ url('/') }}/public/build/assets/app-9a25e63b.js"></script>
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 
 <body class="font-sans text-gray-900 antialiased">

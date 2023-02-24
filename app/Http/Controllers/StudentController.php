@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
      */
+    public function __construct()
+    {
+       
+        $this->middleware('auth');
+    }
+
     public function index()
     {   
         // $student = Student::where("students.is_deleted", 0)
@@ -21,7 +29,7 @@ class StudentController extends Controller
             ->leftJoin('states','states.id','=','students.state')
             ->leftJoin('cities','cities.id','=','students.city')
             ->select('students.*','countries.name as countryName','states.name as stateName','cities.name as cityName')
-            ->paginate(12);
+            ->paginate(13);
         return view('Student.index', compact('student'));
     }
 

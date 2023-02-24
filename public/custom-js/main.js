@@ -56,14 +56,17 @@ $(document).ready(function () {
     });
     
     var contactFlag = false;
+    var editcontactFlag = true;
     $('#phone').keyup(function () {
         var regex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/;
         var ccon = $(this).val();
         if (regex.test(ccon)) {
             contactFlag = true;
+            editcontactFlag = true;
         }
         else {
             contactFlag = false;
+            editcontactFlag = false;
         }
     }).keyup;
 
@@ -73,15 +76,18 @@ $(document).ready(function () {
         }
         else{
             e.preventDefault();
+            alert('Enter Correct Phone Number!');
             $('#phone').focus();
         }
     });
     $('#formStudEdit').submit(function (e) {
-        if(contactFlag==true){
+        if(editcontactFlag==true){
             return;
         }
         else{
             e.preventDefault();
+            editcontactFlag = false;
+            alert('Enter Correct Phone Number!');
             $('#phone').focus();
         }
     });

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 0px; padding-bottom: 0px;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('dashboard') }}">
             <img src="{{ url('/') }}/public/custom-image/logo.png" style="height: 40px; width: 40px;">

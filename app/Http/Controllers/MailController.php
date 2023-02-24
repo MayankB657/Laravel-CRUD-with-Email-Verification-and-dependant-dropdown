@@ -2,39 +2,79 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
-
-use App\Http\Controllers\Controller;
 
 class MailController extends Controller
 {
-    public function basic_email() {
-        $data = array('name'=>"receiver_name");
-        Mail::send(['text'=>'mail'], $data, function($message) {
-           $message->to('mayu.bhandure657@gmail.com', 'receiver_name')->subject
-              ('Basic Email');
-           $message->from('laravelmailsender7@gmail.com','${APP_NAME}');
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+    }
+
+    
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $received_mail = $request->email2;
+        $received_name = $request->name2;
+        return $this-> html_email($received_name,$received_mail);
+    }
+
+    private function html_email($name,$email) {
+        $data = array('name'=>$name,'email'=>$email);
+        Mail::send('mail', $data, function($message)use($email) {
+           $message->to($email)->subject('Password Reset');
+           $message->from('laravelmailsender7@gmail.com','Laravel');
         });
-        echo "Basic Email Sent. Check your inbox.";
-     }
-     public function html_email() {
-        $data = array('name'=>"receiver_name");
-        Mail::send('mail', $data, function($message) {
-           $message->to('mayu.bhandure657@gmail.com', 'receiver_name')->subject
-              ('HTML Email');
-           $message->from('laravelmailsender7@gmail.com','${APP_NAME}');
-        });
-        echo "HTML Email Sent. Check your inbox.";
-     }
-     public function attachment_email() {
-        $data = array('name'=>"receiver_name");
-        Mail::send('mail', $data, function($message) {
-           $message->to('receiver_mail', 'receiver_name')->subject
-              ('Subject');
-           $message->attach('C:\xamppnew\htdocs\laravel\public\custom-image\logo.png');
-           $message->from('laravelmailsender7@gmail.com','${APP_NAME}');
-        });
-        echo "Email Sent with attachment. Check your inbox.";
-     }
+        echo "Email sent. Check your inbox to reset password.";
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
+    }
 }

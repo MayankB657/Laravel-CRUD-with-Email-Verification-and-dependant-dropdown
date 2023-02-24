@@ -8,15 +8,21 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <a href="{{ route('students.create') }}" class="btn btn-info btn-sm mb-2 ml-2 float-right">Add
-                        Student</a>
-                    <a href="{{ route('country.create') }}" class="btn btn-info btn-sm mb-2 ml-2 float-right">Add
-                        Country</a>
-                    <a href="{{ route('state.create') }}" class="btn btn-info btn-sm mb-2 ml-2 float-right">Add
-                        State</a>
-                    <a href="{{ route('city.create') }}" class="btn btn-info btn-sm mb-2 ml-2 float-right">Add
-                        City</a>
-                    {{-- @dd($student->links()); --}}
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ route('students.create') }}" class="btn btn-info btn-sm mb-2 ml-2">Add
+                            Student</a>
+                        <div class="btn-group btn-dark ml-2 mb-2">
+                            <button type="button" class="btn btn-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Address
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('country.create') }}">Add Country</a></li>
+                                <li><a class="dropdown-item" href="{{ route('state.create') }}">Add State</a></li>
+                                <li><a class="dropdown-item" href="{{ route('city.create') }}">Add City</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <table class="table">
                         <thead>
                             <tr class="table-warning">
@@ -58,7 +64,6 @@
                         </tbody>
                     </table>
                     <div>
-                        {{-- @dd($student->links()); --}}
                         {{ $student->links() }}
                     </div>
                 </div>

@@ -30,7 +30,6 @@ Route::post('ajax/fetch-cities', [StudentController::class, 'fetchCity']);
 Route::resource('country', CountryController::class);
 Route::resource('state', StateController::class);
 Route::resource('city', CityController::class);
+Route::resource('mail', MailController::class);
 
-Route::get('/sendattachmentemail', [MailController::class,'attachment_email']);
-Route::get('/sendhtmlemail', [MailController::class,'html_email']);
-Route::get('/sendbasicemail', [MailController::class,'basic_email']);
+// Route::get('/sendhtmlemail', [MailController::class,'html_email']);

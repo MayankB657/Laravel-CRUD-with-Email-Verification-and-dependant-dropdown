@@ -55,7 +55,16 @@
                                 </div>
                                 <div class="form-group d-flex justify-content-center">
                                     <button type="submit" class="btn btn-sm btn-outline-success">Update User</button>
-                                    <a href="" class="btn btn-sm btn-outline-danger ml-3">Reset Password</a>
+                                </div>
+                            </form>
+                            <form action="{{ route('mail.store') }}" method="POST">
+                                @csrf
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="email" name="email2" class="hidden" value="{{ $student->email }}">
+                                    <input type="text" name="name2" class="hidden" value="{{ $student->name }}">
+                                </div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger mt-3">Reset Password</button>
                                 </div>
                             </form>
                         </div>
